@@ -32,19 +32,23 @@ var createNewTaskElement=function(taskString){
     var deleteButton=document.createElement("button");//delete button
     var deleteButtonImg=document.createElement("img");//delete button image
 
+    listItem.className="tasks-list__item task";
+
     label.innerText=taskString;
-    label.className='task';
+    label.className='task__item task__label task__title';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.className="task__item task__check"
     editInput.type="text";
-    editInput.className="task";
+    editInput.className="task__item task__input task__edit-input task__title text-input";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.className="task__item button edit";
 
-    deleteButton.className="delete";
+    deleteButton.className="task__item button delete";
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.className="button__delete-img";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -85,11 +89,11 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
+    var containsClass=listItem.classList.contains("task_editable");
+    //If class of the parent is .task_editable
     if(containsClass){
 
-        //switch to .editmode
+        //switch to .task_editable
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
@@ -98,8 +102,8 @@ var editTask=function(){
         editBtn.innerText="Save";
     }
 
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("editMode");
+    //toggle .task_editable on the parent.
+    listItem.classList.toggle("task_editable");
 };
 
 
@@ -121,6 +125,8 @@ var taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
+    var itemLabel = listItem.querySelector(".task__label");
+    itemLabel.classList.add("task__label_completed")
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
