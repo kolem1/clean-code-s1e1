@@ -118,7 +118,7 @@ input,button{
   width: 226px;
 }
 .task__input {
-  width: 226px
+  width: 226px;
 }
 .button__delete-img {
   height: 2em;
@@ -131,18 +131,18 @@ input,button{
 
 /* Completed */
 .task__label_completed {
-  text-decoration: line-through
+  text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
 .task__edit-input {
-  display: none
+  display: none;
 }
 
 .task_editable .task__edit-input {
   display: inline-block;
-  width: 224px
+  width: 224px;
 }
 
 .task_editable .task__label {
