@@ -6,20 +6,21 @@
   <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
 </head>
 <body class="page">
-  <div class="header">
+  <header class="header">
+    <h1 class="visually-hidden">Todo App</h1>
     <img class="header__img" src="./eisenhower-matrix.jpg">
     <a class="header__link" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
-  </div>
-  <div class="main">
-    <p class="section adding-section">
-      <label class="section__title adding-section__title" for="new-task">Add Item</label>
-      <div class="task-adding task">
+  </header>
+  <main class="main">
+    <section class="section adding-section">
+      <h2 class="section__title adding-section__title">Add Item</h2>
+      <p class="task-adding task">
         <input id="new-task" class="task-adding__input text-input task__item task__title" type="text">
         <button class="button">Add</button>
-      </div>
-    </p>
-    <div class="section">
-      <h3 class="section__title">Todo</h3>
+      </p>
+    </section>
+    <section class="section">
+      <h2 class="section__title">Todo</h2>
       <ul class="tasks-list" id="incomplete-tasks">
         <li class="tasks-list__item task">
           <input class="task__item task__check" type="checkbox">
@@ -36,9 +37,9 @@
           <button class="task__item button delete"><img class="button__delete-img" src="./remove.svg"></button>
         </li>
       </ul>
-    </div>
-    <div class="section">
-      <h3 class="section__title">Completed</h3>
+    </section>
+    <section class="section">
+      <h2 class="section__title">Completed</h2>
       <ul class="tasks-list" id="completed-tasks">
         <li class="tasks-list__item task">
           <input class="task__item task__check" type="checkbox" checked>
@@ -48,8 +49,8 @@
           <button class="task__item button delete"><img class="button__delete-img" src="./remove.svg"></button>
         </li>
       </ul>
-    </div>
-  </div>
+    </section>
+  </main>
   <script src="app.js"></script>
 </body>
 </html>
